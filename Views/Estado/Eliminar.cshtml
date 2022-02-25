@@ -1,0 +1,19 @@
+﻿@model Estado
+<form asp-action="EliminarEstado" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input asp-for="Nombre_Estado" type="text" class="form-control required"  tabindex="1" readonly>
+            </div>
+            
+            <div class="card-footer">
+                <center>
+                    <button type="submit" class="btn btn-primary">Eliminar Estado</button>
+                    <a asp-action="Index" asp-controller="Estado" class="btn btn-secondary">Volver</a>
+                </center>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Estado>
+<div class="container">
+    <div class="col-sm-6">
+        <h3>Lista de Estado</h3>
+    </div>
+    <div class="col-sm-6">
+        <a class="btn btn-success d-block" asp-action="Crear">Crear un nuevo Estado</a>
+    </div>
+</div>
+<div class="row">
+    @if (Model.Count()>0)
+    {
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>@Html.DisplayNameFor(b =>b.Nombre_Estado)</td>
+                    
+                    <td>Acciones</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre_Estado</td>
+                        
+                        <td>
+                            <a asp-action="Eliminar" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No existe ningun Estado</p>
+    }
+</div>
